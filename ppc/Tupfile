@@ -1,0 +1,10 @@
+include_rules
+CC = powerpc-ps2-eabi-gcc
+
+CFLAGS += -fno-builtin -msoft-float
+LDFLAGS = -T link.ld -nostdlib -s
+INC += 
+OUT = $(TOP_DIR)/payload.bin
+
+: foreach *.c |> !cc |>
+: *.o |> !ld |> $(OUT) ../<payload>

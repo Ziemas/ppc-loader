@@ -1,0 +1,12 @@
+include_rules
+CC = mipsel-ps2-irx-gcc
+
+CFLAGS += -D_IOP -fno-builtin -msoft-float -mno-explicit-relocs
+LDFLAGS = -nostdlib -s
+INC += -I$(PS2SDK)/liop/include
+OUT = $(TOP_DIR)/liop.irx
+
+: ../<payload> |> bin2c %<payload> %o payload_data|> payload_bin.c
+: foreach *.c |> !cc |>
+#: imports.lst |> !cc -fno-toplevel-reorder |>
+: *.o |> !ld |> $(OUT) ../<liop>
