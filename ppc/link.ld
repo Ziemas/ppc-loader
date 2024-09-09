@@ -1,7 +1,7 @@
 OUTPUT_FORMAT("binary")
 MEMORY
 {
-	ram (rx) : org = 0x00a00000, len = 1m
+	ram (rx) : org = 0x00a14000, len = 1m
 	/*ram (rwx) : org = 0x00a02000, len = 1m*/
 }
 

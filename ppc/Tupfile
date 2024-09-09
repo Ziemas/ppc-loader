@@ -1,8 +1,8 @@
 include_rules
 CC = powerpc-ps2-eabi-gcc
 
-CFLAGS += -fno-builtin -msoft-float
-LDFLAGS = -T link.ld -nostdlib -s
+CFLAGS += -msoft-float -O3 -fno-builtin
+LDFLAGS = -T link.ld -nostdlib -s -lgcc
 INC += 
 OUT = $(TOP_DIR)/payload.bin
 

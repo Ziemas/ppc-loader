@@ -28,6 +28,7 @@ _start() {
 
 	*(volatile unsigned int*)(0xabfbd8) = PATCH_START_ADDR;
 	rv = *(volatile unsigned int*)(0x1f8fff60);
+	(void)rv;
 
 	return 0;
 }
